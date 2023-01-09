@@ -1,0 +1,25 @@
+
+{
+    "data": [
+        {"id": "1000","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": 35634,"year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1001","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 565665,"mileage": 35634,"year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1002","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": 35634,"year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1003","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1004","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1005","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1006","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1007","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1008","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1009","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1010","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1011","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1012","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1013","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1014","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1015","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1016","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1017","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5},
+        {"id": "1018","brand": "Bentley","model": "Flying Spur","image": "herocar.jpg","price": 165665,"mileage": "35634","year": 2022,"fuel": "Petrol","rating": 5}
+    ]
+}
+    
