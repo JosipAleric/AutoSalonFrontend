@@ -161,6 +161,25 @@
           >
             <div class="flex flex-column align-items-center pb-3">
               <img
+                src="/demo/images/technologies/vite.png"
+                style="height: 16rem"
+              /><span class="text-2xl text-800 font-medium mt-4">Vite JS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 md:col-6 xl:col-4">
+          <div
+            class="
+              surface-card
+              shadow-6
+              border-round
+              hover:shadow-8
+              transition-duration-500
+            "
+          >
+            <div class="flex flex-column align-items-center pb-3">
+              <img
                 src="/demo/images/technologies/laravel.png"
                 style="height: 16rem"
               /><span class="text-2xl text-800 font-medium mt-4">Laravel</span>
