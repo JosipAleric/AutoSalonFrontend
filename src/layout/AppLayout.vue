@@ -1,6 +1,5 @@
 <script setup>
 import AppTopbar from './AppTopbar.vue';
-import AppFooter from './AppFooter.vue';
 import { useLayout } from '@/layout/composables/layout';
 const { layoutConfig, layoutState } = useLayout();
 
@@ -12,7 +11,6 @@ const { layoutConfig, layoutState } = useLayout();
             <div class="layout-main">
                 <router-view></router-view>
             </div>
-            <app-footer></app-footer>
         <div class="layout-mask"></div>
     </div>
 </template>
