@@ -17,7 +17,7 @@
     <h4 class="font-medium text-3xl text-900 ml-3 pb-2">O projektu</h4>
   </div>
   <div class="flex justify-content-center mt-6 text-justify px-4">
-    <div style="max-width: 1200px">
+    <div style="max-width: 1100px">
       <div class="text-s00 text-2xl line-height-3">
         <p>
           <b>AutoSalon</b> je projekt rađen u sklopu kolegija Programiranje za
@@ -145,25 +145,6 @@
                 src="/demo/images/technologies/primevue.png"
                 style="height: 16rem"
               /><span class="text-2xl text-800 font-medium mt-4">PrimeVue</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 md:col-6 xl:col-4">
-          <div
-            class="
-              surface-card
-              shadow-6
-              border-round
-              hover:shadow-8
-              transition-duration-500
-            "
-          >
-            <div class="flex flex-column align-items-center pb-3">
-              <img
-                src="/demo/images/technologies/vite.png"
-                style="height: 16rem"
-              /><span class="text-2xl text-800 font-medium mt-4">Vite JS</span>
             </div>
           </div>
         </div>
