@@ -74,7 +74,6 @@ export default {
   data () {
     return {
       isLogged: this.checkIfIsLogged(),
-      avatar: localStorage.getItem("avatar"),
       overlayMenuItems: ref([
             {
                 label: "Profile Settings",
@@ -140,6 +139,7 @@ export default {
     checkIfIsLogged () {
       let token = window.localStorage.getItem('token')
       if (token) {
+        this.getUserInfo()
         return true
       } else {
         return false
@@ -148,14 +148,9 @@ export default {
     getUserInfo(){
         axios
         .get(
-          "/api/auth/user",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        )
+          "/api/auth/user")
         .then((response) => {
+          console.log(response.data);
           this.userInfo = response.data
         })
         .catch((error) => {
@@ -163,9 +158,6 @@ export default {
         });
     },
   },
-  mounted(){
-    this.getUserInfo()
-  }
 }
 </script>
 
