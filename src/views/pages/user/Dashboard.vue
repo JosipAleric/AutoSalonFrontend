@@ -3,6 +3,13 @@ import AdminPanel from "./DashboardMenu/AdminPanel.vue";
 import Cars from "./DashboardMenu/Cars.vue";
 import Users from "./DashboardMenu/Users.vue";
 import AllOrders from "./DashboardMenu/AllOrders.vue";
+let active = 0;
+const items = [
+        { label: "Dashboard", icon: "pi pi-fw pi-home" },
+        { label: "Cars", icon: "pi pi-fw pi-car" },
+        { label: "Users", icon: "pi pi-fw pi-user" },
+        { label: "Orders", icon: "pi pi-fw pi-wallet" },
+      ];
 </script>
 
 <template>
@@ -10,31 +17,15 @@ import AllOrders from "./DashboardMenu/AllOrders.vue";
     <div class="card border-blue-100">
       <TabMenu :model="items" v-model:activeIndex="active" class="dark-panel"/>
       <div class="mt-5 mx-0 md:mx-3 lg:mx-5">
-        <admin-panel v-if="this.active == 0"></admin-panel>
-        <cars v-if="this.active == 1"></cars>
-        <users v-if="this.active == 2"></users>
-        <all-orders v-if="this.active == 3"></all-orders>
+        <AdminPanel v-if="active == 0"></AdminPanel>
+        <Cars v-if="active == 1"></Cars>
+        <Users v-if="active == 2"></Users>
+        <AllOrders v-if="active == 3"></AllOrders>
       </div>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      active: 0,
-      items: [
-        { label: "Dashboard", icon: "pi pi-fw pi-home" },
-        { label: "Cars", icon: "pi pi-fw pi-car" },
-        { label: "Users", icon: "pi pi-fw pi-user" },
-        { label: "Orders", icon: "pi pi-fw pi-wallet" },
-      ],
-    };
-  },
-  methods: {},
-};
-</script>
 
 <style scoped lang="scss">
 

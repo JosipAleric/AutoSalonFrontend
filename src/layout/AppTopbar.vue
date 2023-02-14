@@ -1,13 +1,13 @@
-<script setup>
+<!-- <script setup>
 import { ref } from 'vue'
-import { useLayout } from '@/layout/composables/layout';
-const { layoutConfig } = useLayout();
+// import { useLayout } from '@/layout/composables/layout';
+// const { layoutConfig } = useLayout();
 
-const menu = ref(null);
-const toggleMenu = (event) => {
-  menu.value.toggle(event);
-};
-</script>
+// const menu = ref(null);
+// const toggleMenu = (event) => {
+//   menu.value.toggle(event);
+// };
+</script> -->
 
 <template>
     <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
@@ -55,8 +55,8 @@ const toggleMenu = (event) => {
             <!-- Topbar after user logs in -->
             <div v-if="isLogged === true">
                 <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <Menu ref="menu" :model="overlayMenuItems" :popup="true" class="mt-2"/>
-                    <a class="flex align-items-center cursor-pointer text-600" @click="toggleMenu">
+                    <Menu ref="menu" :model="overlayMenuItems" :popup="true" class="mt-2" />
+                    <a class="flex align-items-center cursor-pointer text-600" @click="toggle">
                         <img :src="'/demo/images/avatar/' + this.userInfo.image_path" width="40" height="40" alt="">
                         <span class="font-medium text-900 text-lg mx-2">{{this.userInfo.first_name}} {{ this.userInfo.last_name }}</span>
                         <i class="pi pi-angle-down pt-1"></i>
@@ -70,10 +70,12 @@ const toggleMenu = (event) => {
 
 <script>
 import axios from "axios";
+import { ref } from 'vue'
 export default {
   data () {
     return {
       isLogged: this.checkIfIsLogged(),
+      menu: null,
       overlayMenuItems: ref([
             {
                 label: "Profile Settings",
@@ -115,6 +117,11 @@ export default {
         life: 4000,
       });
     },
+
+    toggle(event) {
+            this.$refs.menu.toggle(event);
+        },
+
     logout() {
       axios
         .get(
@@ -150,7 +157,7 @@ export default {
         .get(
           "/api/auth/user")
         .then((response) => {
-          console.log(response.data);
+          console.log("u funkciji: " + response.data);
           this.userInfo = response.data
         })
         .catch((error) => {
