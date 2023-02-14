@@ -86,7 +86,7 @@ const formatCurrency = (value) => {
 
                 <template #footer>
                   <div class="flex justify-content-center -mt-5">
-                    <Button class="bg-primary" icon="pi pi-chevron-circle-right" label="See More Details" @click="this.$router.push('/pages/shop')" />
+                    <Button class="bg-primary" icon="pi pi-chevron-circle-right" label="See More Details" @click="router.push('/pages/shop')" />
                   </div>
                 </template>
               </Card>

@@ -1,9 +1,10 @@
 <script setup>
+import { ref } from 'vue'
 import AdminPanel from "./DashboardMenu/AdminPanel.vue";
 import Cars from "./DashboardMenu/Cars.vue";
 import Users from "./DashboardMenu/Users.vue";
 import AllOrders from "./DashboardMenu/AllOrders.vue";
-let active = 0;
+const active = ref(0);
 const items = [
         { label: "Dashboard", icon: "pi pi-fw pi-home" },
         { label: "Cars", icon: "pi pi-fw pi-car" },
