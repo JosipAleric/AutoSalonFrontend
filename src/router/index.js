@@ -14,43 +14,42 @@ const router = createRouter({
           name: "landing",
           component: Landing,
         },
-
         {
           path: "/pages/shop",
           name: "shop",
           component: () => import("@/views/pages/Shop.vue"),
         },
-        
         {
-          path: "/pages/contact",
-          name: "contact",
-          component: () => import("@/views/pages/Contact.vue"),
-        },
-
-        {
-          path: "/pages/userprofile",
+          path: "/pages/user/userprofile",
           name: "userprofile",
-          component: () => import("@/views/pages/UserProfile.vue"),
+          component: () => import("@/views/pages/user/UserProfile.vue"),
         },
-
         {
           path: "/pages/projectinfo",
           name: "projectinfo",
           component: () => import("@/views/pages/ProjectInfo.vue"),
         },
-
-
+        {
+          path: "/pages/user/dashboard",
+          name: "dashboard",
+          component: () => import("@/views/pages/user/Dashboard.vue"),
+        },
+        {
+          path: "/pages/user/orders",
+          name: "orders",
+          component: () => import("@/views/pages/user/Orders.vue"),
+        },
       ],
     },
     {
-      path: "/pages/login",
+      path: "/pages/auth/login",
       name: "login",
-      component: () => import("@/views/pages/Login.vue"),
+      component: () => import("@/views/pages/auth/Login.vue"),
     },
     {
-      path: "/pages/register",
+      path: "/pages/auth/register",
       name: "register",
-      component: () => import("@/views/pages/Register.vue"),
+      component: () => import("@/views/pages/auth/Register.vue"),
     },
   ],
 });

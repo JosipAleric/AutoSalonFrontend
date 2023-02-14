@@ -1,7 +1,12 @@
 <script setup>
+import { ref } from 'vue'
 import { useLayout } from '@/layout/composables/layout';
 const { layoutConfig } = useLayout();
 
+const menu = ref(null);
+const toggleMenu = (event) => {
+  menu.value.toggle(event);
+};
 </script>
 
 <template>
@@ -27,13 +32,6 @@ const { layoutConfig } = useLayout();
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/pages/contact" v-slot="{ navigate }">
-                        <a @click="navigate()" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3" >
-                            <span>Contact Us</span>
-                        </a>
-                    </router-link>
-                </li>
-                <li>
                     <router-link to="/pages/projectinfo" v-slot="{ navigate }">
                         <a @click="navigate()" class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
                             <span>Project Info</span>
@@ -41,16 +39,134 @@ const { layoutConfig } = useLayout();
                     </router-link>
                 </li>
             </ul>
-            <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                <router-link to="/pages/login" v-slot="{ navigate }">
-                    <Button role="link" label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-primary" @click="navigate()"></Button>
-                </router-link>
-                <router-link to="/pages/register" v-slot="{ navigate }">
-                    <Button role="link" label="Register" class="p-button-text bg-primary p-button-rounded border-none font-light line-height-2 text-white" @click="navigate()"></Button>
-                </router-link>
+
+            <!-- Default topbar -->
+            <div v-if="isLogged === false">
+                <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+                    <router-link to="/pages/auth/login" v-slot="{ navigate }">
+                        <Button role="link" label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-primary" @click="navigate()"></Button>
+                    </router-link>
+                    <router-link to="/pages/auth/register" v-slot="{ navigate }">
+                        <Button role="link" label="Register" class="p-button-text bg-primary p-button-rounded border-none font-light line-height-2 text-white" @click="navigate()"></Button>
+                    </router-link>
+                </div>
             </div>
+
+            <!-- Topbar after user logs in -->
+            <div v-if="isLogged === true">
+                <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+                    <Menu ref="menu" :model="overlayMenuItems" :popup="true" class="mt-2"/>
+                    <a class="flex align-items-center cursor-pointer text-600" @click="toggleMenu">
+                        <img :src="'/demo/images/avatar/' + this.userInfo.image_path" width="40" height="40" alt="">
+                        <span class="font-medium text-900 text-lg mx-2">{{this.userInfo.first_name}} {{ this.userInfo.last_name }}</span>
+                        <i class="pi pi-angle-down pt-1"></i>
+                    </a>
+                </div>
+            </div>
+            <Toast position="top-right"/>
         </div>
     </div>
 </template>
+
+<script>
+import axios from "axios";
+export default {
+  data () {
+    return {
+      isLogged: this.checkIfIsLogged(),
+      avatar: localStorage.getItem("avatar"),
+      overlayMenuItems: ref([
+            {
+                label: "Profile Settings",
+                icon: "pi pi-user-edit",
+                to: '/pages/user/userprofile'
+            },
+            {
+                label: 'Dashboard',
+                icon: "pi pi-id-card",
+                visible: () => this.userInfo.is_admin,
+                to: '/pages/user/dashboard'
+            },
+            {
+                label: 'Orders',
+                icon: "pi pi-wallet",
+                to: '/pages/user/orders'
+            },
+            {
+              separator: true
+            },
+            {
+                label: "Logout",
+                icon: "pi pi-sign-out",
+                command:() => {
+                    this.logout()
+                }
+            }
+        ]),
+        userInfo: []
+    }
+  },
+
+  methods: {
+    toggleSuccessToast() {
+      this.$toast.add({
+        severity: "success",
+        summary: "Success Message",
+        detail: "Logged out successfully!",
+        life: 4000,
+      });
+    },
+    logout() {
+      axios
+        .get(
+          "/api/auth/logout",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          console.log(response.data);
+          localStorage.removeItem('token')
+          this.isLogged = this.checkIfIsLogged()
+          this.toggleSuccessToast();
+          this.$router.push("/")
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+    },
+    checkIfIsLogged () {
+      let token = window.localStorage.getItem('token')
+      if (token) {
+        return true
+      } else {
+        return false
+      }
+    },
+    getUserInfo(){
+        axios
+        .get(
+          "/api/auth/user",
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((response) => {
+          this.userInfo = response.data
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+    },
+  },
+  mounted(){
+    this.getUserInfo()
+  }
+}
+</script>
 
 <style lang="scss" scoped></style>
