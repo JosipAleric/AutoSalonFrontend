@@ -63,24 +63,24 @@ const formatCurrency = (value) => {
                   </div>
                   <div class="flex justify-content-between mt-3">
                     <Chip
-                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-money-bill text-lg mr-2"></i>{{ formatCurrency(car.price).slice(0, -3) }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-money-bill text-md mr-1"></i>{{ formatCurrency(car.price).slice(0, -3) }}</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-wrench text-lg mr-2"></i>{{ car.mileage }} KM</span></Chip
+                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-cog text-md mr-1"></i>AWD</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-car text-lg mr-2"></i>{{ car.power }} HP</span></Chip
+                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-car text-md mr-1"></i>{{ car.power }} HP</span></Chip
                     >
                   </div>
                   <div class="flex justify-content-between mt-3">
                     <Chip
-                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-wrench text-lg mr-1"></i>{{ car.engine }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-wrench text-md mr-1"></i>{{ car.engine }}</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-caret-right text-lg "></i>{{ car.fuel_type }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-caret-right text-md "></i>{{ car.fuel_type }}</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-cog text-lg mr-1"></i>{{ car.drivetrain }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-wrench text-md mr-1"></i>{{ car.mileage }} KM</span></Chip
                     >
                   </div>
                 </template>
