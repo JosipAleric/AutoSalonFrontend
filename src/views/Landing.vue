@@ -49,7 +49,7 @@ const formatCurrency = (value) => {
             <div class="col-12 lg:col-6 xl:col-4 flex justify-content-center" v-for="car in cars" :key="car">
               <Card class="transition-duration-500 shadow-6 hover:shadow-8 px-2 md:px-0">
                 <template #header>
-                  <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/'" style="height: 17rem" class="border-round" />
+                  <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/' + car.image_path" style="height: 17rem" class="border-round" />
                 </template>
                 <template #title>
                   <div class="text-LEFT">{{ car.brand }} {{ car.model }}</div>

@@ -11,7 +11,7 @@
       </div>
 
       <div class="flex flex-column md:flex-row md:align-items-center border-bottom-1 surface-border py-5">
-        <img src="/demo/images/landing/mclaren765.jpeg" class="w-15rem flex-shrink-0 md:mr-6" />
+        <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/' + this.orders.cars[index].image_path" class="w-15rem flex-shrink-0 md:mr-6" />
         <div class="flex-auto mt-3 md:mt-0">
           <span class="text-xl text-900" >{{this.orders.cars[index].brand}} {{this.orders.cars[index].model}}</span>
           <div class="font-medium text-2xl text-900 mt-3 mb-5">Order {{order.order_status}}</div>

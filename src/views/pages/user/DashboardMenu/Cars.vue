@@ -216,9 +216,9 @@ const upload = (e) => {
           </template>
         </Column>
         <Column header="Image" headerStyle="width:14%; min-width:10rem;">
-          <template >
+          <template #body="slotProps">
             <span class="p-column-title">Image</span>
-            <img src="/public/demo/images/landing/herocar.jpg" class="shadow-2" width="100" />
+            <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/' + slotProps.data.image_path" class="shadow-2" width="100" />
           </template>
         </Column>
         <Column field="price" header="Price" :sortable="true" headerStyle="width:14%; min-width:8rem;">
@@ -254,7 +254,7 @@ const upload = (e) => {
       </DataTable>
 
       <Dialog v-model:visible="productDialog" :style="{ width: '450px' }" header="Car Details" :modal="true" class="p-fluid">
-        <img src="/demo/images/landing/mclaren765.jpeg"  v-if="product.image_path" width="150" class="mt-0 mx-auto mb-5 block shadow-2" />
+        <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/' + product.image_path"  v-if="product.image_path" width="150" class="mt-0 mx-auto mb-5 block shadow-2" />
         <div class="field">
           <label for="brand">Brand</label>
           <InputText id="brand" v-model.trim="product.brand" required="true" autofocus :class="{ 'p-invalid': submitted && !product.brand }" />

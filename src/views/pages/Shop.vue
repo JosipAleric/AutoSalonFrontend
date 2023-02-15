@@ -115,7 +115,7 @@ const orderCar = async () => {
               <Card class="card border-1 surface-border">
                 <template #header>
                   <div class="flex justify-content-center">
-                    <img src="/demo/images/landing/mclaren765.jpeg" class="border-round w-9 shadow-2 mt-3 mx-0" />
+                    <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/' + slotProps.data.image_path" class="border-round w-9 shadow-2 mt-3 mx-0" />
                   </div>
                 </template>
                 <template #title>
@@ -160,7 +160,7 @@ const orderCar = async () => {
   <Dialog v-model:visible="productDialog" :breakpoints="{ '1600px': '65vw', '880px': '95vw' }" :style="{ width: '50vw' }" modal :closable="false">
     <div class="grid">
       <div class="col-12 flex align-items-center mt-5 px-5 md:px-8">
-        <img src="/demo/images/landing/mclaren765.jpeg" alt="" class="shadow-8 w-full border-round-3xl" />
+        <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/' + product.image_path" alt="" class="shadow-8 w-full border-round-3xl" />
       </div>
       <div class="col-12 mt-4">
         <div class="text-center" id="brand">
