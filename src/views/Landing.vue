@@ -8,6 +8,7 @@ const cars = ref(null);
 const getAllCars = async () => {
   const data = await axios.get("/api/cars");
   cars.value = data.data.slice(0, 3);
+  console.log(cars.value);
 };
 
 onMounted(() => {
@@ -48,7 +49,7 @@ const formatCurrency = (value) => {
             <div class="col-12 lg:col-6 xl:col-4 flex justify-content-center" v-for="car in cars" :key="car">
               <Card class="transition-duration-500 shadow-6 hover:shadow-8 px-2 md:px-0">
                 <template #header>
-                  <img src="/demo/images/landing/mclaren765.jpeg" style="height: 17rem" class="border-round" />
+                  <img :src="'http://pzi072023.studenti.sum.ba/backend/storage/'" style="height: 17rem" class="border-round" />
                 </template>
                 <template #title>
                   <div class="text-LEFT">{{ car.brand }} {{ car.model }}</div>
@@ -62,31 +63,33 @@ const formatCurrency = (value) => {
                   </div>
                   <div class="flex justify-content-between mt-3">
                     <Chip
-                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-money-bill text-lg mr-2"></i>{{ formatCurrency(car.price).slice(0, -3) }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-money-bill text-lg mr-2"></i>{{ formatCurrency(car.price).slice(0, -3) }}</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-wrench text-lg mr-2"></i>{{ car.mileage }} KM</span></Chip
+                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-wrench text-lg mr-2"></i>{{ car.mileage }} KM</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-car text-lg mr-2"></i>{{ car.power }} HP</span></Chip
+                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-car text-lg mr-2"></i>{{ car.power }} HP</span></Chip
                     >
                   </div>
                   <div class="flex justify-content-between mt-3">
                     <Chip
-                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-wrench text-lg mr-1"></i>{{ car.engine }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-wrench text-lg mr-1"></i>{{ car.engine }}</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-caret-right text-lg "></i>{{ car.fuel_type }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-caret-right text-lg "></i>{{ car.fuel_type }}</span></Chip
                     >
                     <Chip
-                      ><span class="text-md font-medium text-700 py-1"><i class="pi pi-cog text-lg mr-1"></i>{{ car.drivetrain }}</span></Chip
+                      ><span class="text-md font-medium text-700 py-2"><i class="pi pi-cog text-lg mr-1"></i>{{ car.drivetrain }}</span></Chip
                     >
                   </div>
                 </template>
 
                 <template #footer>
                   <div class="flex justify-content-center -mt-5">
-                    <Button class="bg-primary" icon="pi pi-chevron-circle-right" label="See More Details" @click="router.push('/pages/shop')" />
+                    <router-link to="/pages/shop" v-slot="{ navigate }">
+                    <Button class="bg-primary" icon="pi pi-chevron-circle-right" label="See More Details" @click="navigate()" />
+                  </router-link>
                   </div>
                 </template>
               </Card>

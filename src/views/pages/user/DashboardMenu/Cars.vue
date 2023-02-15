@@ -218,7 +218,7 @@ const upload = (e) => {
         <Column header="Image" headerStyle="width:14%; min-width:10rem;">
           <template >
             <span class="p-column-title">Image</span>
-            <img src="/demo/images/landing/mclaren765.jpeg" class="shadow-2" width="100" />
+            <img src="/public/demo/images/landing/herocar.jpg" class="shadow-2" width="100" />
           </template>
         </Column>
         <Column field="price" header="Price" :sortable="true" headerStyle="width:14%; min-width:8rem;">

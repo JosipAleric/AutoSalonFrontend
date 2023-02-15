@@ -1,5 +1,6 @@
 <template>
   <div class="card border-blue-100 mx-2 md:mx-3 lg:mx-6 xl:mx-8">
+    <div class="flex flex-row mb-5 justify-content-center" v-if="this.orders.orders==0"><span class="font-medium text-4xl">You don't have any orders</span></div>
     <div class="card border-blue-100 mx-0 lg:mx-4"  v-for="(order,  index) in orders.orders" :key="order">
       <div class="flex flex-column sm:flex-row sm:justify-content-between sm:align-items-center">
         <span class="text-2xl font-medium text-900">Thanks for your order!</span>
@@ -34,7 +35,6 @@ export default {
       status: "",
       length: null,
       orders: [],
-      cars: []
     };
   },
   methods: {
@@ -44,7 +44,6 @@ export default {
         .then((response) => {
           console.log(response.data)
           this.orders = response.data;
-         
         })
         .catch((error) => {
           console.log(error);
@@ -57,6 +56,7 @@ export default {
   },
   mounted(){
     this.getOrders()
+    console.log(this.orders)
   }
 };
 </script>

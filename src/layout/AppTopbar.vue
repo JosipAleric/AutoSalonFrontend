@@ -1,14 +1,3 @@
-<!-- <script setup>
-import { ref } from 'vue'
-// import { useLayout } from '@/layout/composables/layout';
-// const { layoutConfig } = useLayout();
-
-// const menu = ref(null);
-// const toggleMenu = (event) => {
-//   menu.value.toggle(event);
-// };
-</script> -->
-
 <template>
     <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
         <a class="flex align-items-center" href="/"> <img src="/layout/images/logo.png" alt="AppLogo" height="50" class="mr-2" /><span class="text-900 font-medium text-2xl line-height-3 mr-8">AutoSalon</span> </a>
@@ -157,7 +146,6 @@ export default {
         .get(
           "/api/auth/user")
         .then((response) => {
-          console.log("u funkciji: " + response.data);
           this.userInfo = response.data
         })
         .catch((error) => {
