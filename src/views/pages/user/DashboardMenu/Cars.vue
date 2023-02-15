@@ -332,7 +332,7 @@ const upload = (e) => {
             <small class="p-invalid" v-if="submitted && !product.power">Power is required.</small>
           </div>
         </div>
-        <FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Upload" chooseLabel="Upload Image" class="mt-2 p-button-primary" @change="handleUpload" />
+        <FileUpload mode="basic" accept="image/*" :maxFileSize="1000000" label="Upload" chooseLabel="Upload Image" class="mt-2 p-button-primary" @change="handleUpload()" />
         <template #footer>
           <Button label="Cancel" icon="pi pi-times" class="p-button-text" @click="hideDialog" />
           <Button label="Save" icon="pi pi-check" class="p-button-text" @click="saveProduct" />
