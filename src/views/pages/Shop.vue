@@ -138,10 +138,10 @@ const orderCar = async () => {
                 </template>
                 <template #content>
                   <div class="flex align-items-center justify-content-center">
-                    <Chip class="mr-0 md:mr-2">
-                      <span class="text-lg font-medium text-700 p-1"><i class="pi pi-wrench text-lg mr-2"></i>{{ slotProps.data.power }} HP</span></Chip>
+                    <Chip class="mr-0 sm:mr-2">
+                      <span class="text-md font-medium text-700 p-1"><i class="pi pi-wrench text-lg mr-1"></i>{{ slotProps.data.power }} HP</span></Chip>
                     <Chip
-                      ><span class="text-lg font-medium text-700 p-1"><i class="pi pi-calendar text-lg mr-2"></i>{{ slotProps.data.year }}</span></Chip>
+                      ><span class="text-md font-medium text-700 p-1"><i class="pi pi-calendar text-lg mr-1"></i>{{ slotProps.data.year }}</span></Chip>
                   </div>
                 </template>
                 <template #footer>

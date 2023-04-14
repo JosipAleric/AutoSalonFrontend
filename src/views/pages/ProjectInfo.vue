@@ -65,7 +65,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/html.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">HTML</span>
             </div>
           </div>
@@ -84,7 +84,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/js.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4"
                 >JavaScript</span
               >
@@ -105,7 +105,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/css.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">CSS</span>
             </div>
           </div>
@@ -124,7 +124,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/vue.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">Vue.js</span>
             </div>
           </div>
@@ -143,7 +143,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/primevue.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">PrimeVue</span>
             </div>
           </div>
@@ -162,7 +162,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/laravel.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">Laravel</span>
             </div>
           </div>
@@ -181,7 +181,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/sql.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">MySQL</span>
             </div>
           </div>
@@ -200,7 +200,7 @@
             <div class="flex flex-column align-items-center pb-3">
               <img
                 src="/demo/images/technologies/php.png"
-                style="height: 16rem"
+                style="height: 13rem"
               /><span class="text-2xl text-800 font-medium mt-4">PHP</span>
             </div>
           </div>
