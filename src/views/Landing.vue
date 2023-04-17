@@ -45,7 +45,7 @@ const formatCurrency = (value) => {
             <span class="text-600 text-2xl">Take a look at our featured cars...</span>
           </div>
 
-          <div class="grid flex-grow-1 px-3 md:px-0">
+          <div class="grid flex-grow-1 px-2 md:px-0">
             <div class="col-12 lg:col-6 xl:col-4 flex justify-content-center" v-for="car in cars" :key="car">
               <Card class="transition-duration-500 shadow-6 hover:shadow-8">
                 <template #header>
