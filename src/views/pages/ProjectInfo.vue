@@ -22,7 +22,7 @@
         <p>
           <b>AutoSalon</b> je projekt rađen u sklopu kolegija Programiranje za
           internet koji se održava na III. godini studija informatike na
-          Fakultet prirodoslovno-matematičkih i odgojnih znanosti (FPMOZ) na
+          Fakultetu prirodoslovno-matematičkih i odgojnih znanosti (FPMOZ) na
           Sveučilištu u Mostaru. Cilj kolegija je osposobljavanje studenata za
           razumijevanje principa rada interneta, pripremu i obradu podataka i
           informacija za objavljivanje na webu, dizajniranje, uređivanje i
